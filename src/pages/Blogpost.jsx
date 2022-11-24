@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { client } from "../lib/client";
 import { PortableText } from "@portabletext/react";
-import ProfileCard from "../components/ProfileCard";
 import { format } from "date-fns";
 
 const Blogpost = () => {
@@ -46,9 +45,7 @@ const Blogpost = () => {
               className="h-2/3 w-full object-cover rounded-2xl shadow"
             />
           )}
-          <h1 className="text-4xl leading-loose my-8 xl:text-6xl">
-            {blogpost.title}
-          </h1>
+          <h1 className="text-4xl my-8 xl:text-6xl">{blogpost.title}</h1>
           <p className="font-bold text-sm mb-8">
             {blogpost.name}{" "}
             {blogpost.publishedAt && (
@@ -69,8 +66,6 @@ const Blogpost = () => {
               Read More Blog posts
             </Link>
           </div>
-
-          <ProfileCard />
         </section>
       )}
     </>

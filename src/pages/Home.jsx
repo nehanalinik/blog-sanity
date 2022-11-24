@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Newsletter from "../components/Newsletter";
-import ProfileCard from "../components/ProfileCard";
 import { client } from "../lib/client";
 import { format } from "date-fns";
 import { Link } from "react-router-dom";
@@ -37,9 +35,6 @@ const Home = () => {
   }, []);
   return (
     <>
-      {/* <div>
-        <h2 className="text-[2.85rem] text-center my-4">Blog About React</h2>
-      </div> */}
       {stories[0] && (
         <section className="max-w-7xl mx-auto my-20 px-5">
           <article className="relative">
@@ -86,7 +81,7 @@ const Home = () => {
                   {format(new Date(story.publishedAt), "dd MMMM yyyy")}
                 </p>
                 <h2 className="text-xl mb-2 my-2">{story.title}</h2>
-                <p className="text-sm leading-relaxed">
+                <p className="text-sm">
                   {`${story?.body[0]?.children[0]?.text.substring(0, 200)}...`}
                 </p>
               </div>
@@ -104,9 +99,6 @@ const Home = () => {
           Read All Blog Posts
         </Link>
       </div>
-
-      <Newsletter />
-      <ProfileCard />
     </>
   );
 };
